@@ -4,6 +4,7 @@ import sys
 sys.path.append('/path/to/ffmpeg')
 
 from pydub import AudioSegment
+from pydub.playback import play
 
 class SimpleSynthesiser:
     def __init__(self,path:str) -> None:
@@ -15,13 +16,13 @@ class SimpleSynthesiser:
             "f":"/mouth/lips_teeth/f.mov",
             "v":"/mouth/lips_teeth/v.mov",
             "s":"/mouth/teeth/teeth_aligned/s.mp3",
-            "z":"/mouth/teeth/teeth_aligned/z.mp3",
+            "z":"/mouth/teeth/teeth_aligned/z.mov",
             "ʃ":"/mouth/teeth/teeth_overbite/ʃ.mp3",
             "ʒ":"/mouth/teeth/teeth_overbite/ʒ.mp3",
             "ð":"/mouth/teeth_tongue/ð.mp3",
             "θ":"/mouth/teeth_tongue/θ.mov",
             "d":"/mouth/tongue/palate/d.mov",
-            "n":"/mouth/tongue/palate/n.mp3",
+            "n":"/mouth/tongue/palate/n.mov",
             "r":"/mouth/tongue/palate/r.mp3",
             "t":"/mouth/tongue/palate/t.mp3",
             "l":"/mouth/tongue/side/l.mp3",
@@ -47,12 +48,16 @@ class SimpleSynthesiser:
         }
 
     
-    def synthesise(self, phonemes:List[str]) -> None:
+    def synthesise(self, phonemes:List[str], save:bool=False) -> None:
         audio_file = AudioSegment.empty()     
-        for phoneme in phonemes:
+        for index,phoneme in enumerate(phonemes):
             if phoneme in self.alphabet:
                 filename = self.alphabet[phoneme]
                 file_path = self.path + filename
                 file_type = filename.split(".")[-1]
-                audio_file += AudioSegment.from_file(file_path,format=file_type)
-        file_handle = audio_file.export("output.mp3", format="mp3")
+                _audio_file = AudioSegment.from_file(file_path,format=file_type)
+                fade_duration = min(len(_audio_file), len(audio_file))/2
+                audio_file = audio_file.append(_audio_file, crossfade=fade_duration)
+        play(audio_file)
+        if save:
+            file_handle = audio_file.export("output.mp3", format="mp3")
