@@ -46,3 +46,10 @@ x = SimpleSynthesiser("sounds")
 #http://ipa-reader.xyz/?text=ʃɑtɑp&voice=Emma
 #http://ipa-reader.xyz/?text=ʃa ɑp&voice=Emma
 #http://ipa-reader.xyz/?text=ʃorɑp&voice=Emma
+
+
+#EG4 BRITISH
+"bɹ'ʃ" #Cockney English
+"britiʃ" #South african
+x.synthesise(["b","ɹ","i","'","ʃ"]) 
+x.synthesise(["b","r","i","t","i","ʃ"]) 
