@@ -19,7 +19,7 @@ x = SimpleSynthesiser("sounds")
 #x.synthesise(["i","a:","v","i","ŋ","a","'","l","a:","f"]) #Northern English (y'avin a laugh)
 
 #SHUT UP
-"ʃɑt ap" #BBC english
+"ʃɑtɑp" #BBC english
 "ʃa ɑp"  #London Cockney 
 #x.synthesise(["ʃ","ɑ","t","'","a","p"]) #BBC english
 #x.synthesise(["ʃ","a:","ɑ","p"]) #London Cockney 
