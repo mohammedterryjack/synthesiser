@@ -10,10 +10,9 @@ class SimpleSynthesiser:
     def __init__(self,path:str) -> None:
         self.path = path
         self.alphabet = {
-            "ɹ":"/mouth/lips/open/ɹ.mp3",
-            "b":"/mouth/lips/closed/b.mov",
-            "m":"/mouth/lips/closed/m.mov",
-            "p":"/mouth/lips/closed/p.mov",
+            "b":"/mouth/lips/b.mov",
+            "m":"/mouth/lips/m.mov",
+            "p":"/mouth/lips/p.mov",
             "f":"/mouth/lips_teeth/f.mov",
             "v":"/mouth/lips_teeth/v.mov",
             "s":"/mouth/teeth/teeth_aligned/s.mp3",
@@ -32,6 +31,7 @@ class SimpleSynthesiser:
             "ŋ":"/throat/contracted/ŋ.mp3",
             "'":"/throat/open/'.mov",
             "h":"/throat/open/h.mov",
+            "ɹ":"/throat/open/ɹ.mp3",
             "a":"/throat/open/vowels/short/a.mov",
             "ɑ":"/throat/open/vowels/short/ɑ.mov",
             "e":"/throat/open/vowels/short/e.mp3",
