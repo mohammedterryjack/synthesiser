@@ -1,0 +1,20 @@
+{
+    "fill it up":{
+        "bbc":"f i l i t ɑ p",
+        "cockney":"f i u: i ' a p",
+        "northerner":"f i l i t u p",
+        "american":"f i Ꮠ i d a p"
+    },
+    "glass of water":{
+        "bbc":"g l ɑ: s ɑ f u o: t ɑ",
+        "cockney":"g l o: s a ' u o: ' a",
+        "northerner":"g l a s ɑ f u o: t a",
+        "american":"g l e i a s o v u ɑ: d ə"
+    },
+    "cup of tea":{
+        "bbc":"k ɑ p ɑ f t i:",
+        "cockney":"k ɑ p a t e i",
+        "northerner":"k u p a t i:",
+        "american":"k ɑ p a f t i:"
+    }
+}
